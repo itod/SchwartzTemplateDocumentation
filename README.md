@@ -306,7 +306,7 @@ Indentation withing Trim Tags may be controlled with nested **Indent Tags**. The
 <% trim %>
     <% if true %>
         <% indent %>
-            Make it so.
+            I hate yogurt! Even with strawberries.
         <% /indent %>
     <% /if %>
 <% /trim %>
@@ -314,11 +314,11 @@ Indentation withing Trim Tags may be controlled with nested **Indent Tags**. The
 
 Produces a single line indented by 4 spaces:
 
-        Make it so.
+        I hate yogurt! Even with strawberries.
 
 ###Comment Tags
 
-The body of Comment Tags is ignored, and not included in the output text.
+The body of **Comment Tags** is ignored, and not included in the output text.
 
 ```jsp
 <% comment %>
