@@ -315,6 +315,16 @@ Produces a single line indented by 4 spaces:
 
         Make it so.
 
+###Comment Tag
+
+The body of Comment Tags is ignored, and not included in the output text.
+
+```jsp
+<% comment %>
+    That's the same combination I use on my luggage!
+<% /comment %>
+```
+
 ##Template Expression Language
 
 As you have seen in the examples above, many tags may contain simple expressions which should be familiar to anyone with experience using JavaScript.
