@@ -1,6 +1,8 @@
 ###Template Syntax
 
-TDTemplateEngine template syntax is very similar to MGTemplateEngine and Django. Tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable.
+TDTemplateEngine template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-template basis in the Templates Window (⌃⎇⌘T).
+
+The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `{%` `%}` and `{{` `}}`, you can use those on your user-defined templates by specifying the tag delimiters in the Templates Window UI.
 
 ####Print Tag
 
