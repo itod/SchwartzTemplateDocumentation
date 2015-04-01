@@ -12,9 +12,9 @@ Templates are managed in the Template Window (Accessible via the Main Menu > Win
 
 ##Template Tags
 
-The Schwartz Template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-template basis in the Templates Window (⌃⎇⌘T).
+The Schwartz Template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-Template basis in the Templates Window (⌃⎇⌘T).
 
-The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `<%` `%>` and `<%=` `%>`, you can use those on your user-defined templates by specifying the tag delimiters in the Templates Window UI.
+The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `{%` `%}` and `{{` `}}`, you can use those on your user-defined Templates by double-clicking and editing the tag delimiters next to your user-definted Template in the Templates Window.
 
 ###Print Tag
 
