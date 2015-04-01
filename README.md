@@ -8,7 +8,7 @@ So Templates are used to specify the source code generated from each Page of a S
 
 Schwartz has several built-in Templates for popular programming languages like Objective-C, JavaScript, Swift, and SVG. The built-in Templates are not editable, but users can create their own Templates from scratch, or by starting from an existing built-in Template.
 
-Templates are managed in the Template Window (Accessible via the Main Menu > Window > Templates Window or `⌃⎇⌘T`). There you can explore the built-in Templates of creat your own.
+Templates are managed in the Template Window (Accessible via the Main Menu > Window > Templates Window or `⌃⎇⌘T`). There you can explore the built-in Templates or create your own.
 
 ##Template Tags
 
