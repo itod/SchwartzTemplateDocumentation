@@ -1,6 +1,6 @@
 ###Template Syntax
 
-TDTemplateEngine template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-template basis in the Templates Window (⌃⎇⌘T).
+The Schwartz template language syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-template basis in the Templates Window (⌃⎇⌘T).
 
 The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `{%` `%}` and `{{` `}}`, you can use those on your user-defined templates by specifying the tag delimiters in the Templates Window UI.
 
@@ -110,7 +110,7 @@ If no expression is present in the Continue Tag, it is always respected, and the
 
 ####Trim and Indent Tags
 
-As with any templating mechanism, whitespace handling is often a significant concern. TDTemplateEngine includes two optional tags that can be used to simplify whitespace handling.
+As with any templating mechanism, whitespace handling is often a significant concern. Schwartz includes two optional tags that can be used to simplify whitespace handling.
 
 The **Trim Tag** is a block tag that trims both the leading and trailing whitespace from any lines contained within their body content.
 
