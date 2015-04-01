@@ -2,7 +2,7 @@
 
 Each Page of a Schwartz Document has an Object Model, similar to the Document Object Model (DOM) familiar to web developers. This Object Model is a heirarchical tree structure of objects representing the graphical objects displayed on the Schwartz Canvas.
 
-When you click the **Generate** button, Schwartz produces the source code representation of the currently selected Page. To do this, Schwartz traverses the current Page Object Model using the currently selected Template.
+When you click the **Generate** button, Schwartz produces a source code representation of the currently selected Page by traversing the current Page Object Model using the currently selected Template.
 
 So Templates are used to specify the source code generated from each Page of a Schwartz Document. This Template-based source code generation is what makes Schwartz unique. 
 
