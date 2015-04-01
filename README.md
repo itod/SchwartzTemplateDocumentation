@@ -21,7 +21,7 @@ The default tag delimiters were chosen as they mix well with C-inspired language
 **Print Tags** print the value an expression to the text output:
 
 ```jsp
-     My name is <%= name %>.
+My name is <%= name %>.
 ```
 
 Whitespace around the tag delimiters is optional.
