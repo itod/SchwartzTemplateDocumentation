@@ -39,85 +39,101 @@ Each Template has access to a global Array of Objects called `objects`. Each obj
 ####Object
 
 ```java
-    Point       center
-    String      class
-    Number      fillAngle (0..360)
-    Color       fillColor
-    Gradient    fillGradient
-    Number      fillShadowBlur
-    Color       fillShadowColor
-    Boolean     fillShadowEnabled
-    Number      fillShadowOffsetX
-    Number      fillShadowOffsetY
-    String      fillType ('solid', 'linear', 'radial', 'none')
-    Rectangle   frame
-    String      id
-    Number      opacity (0..1)
-    Path        path
-    Number      rotationAngle (0..360)
-    Boolean     scaleImage
-    Color       strokeColor
-    String      strokeLineCap ('butt', 'round', 'square')
-    LineDash    strokeLineDash
-    String      strokeLineJoin ('miter', 'round', 'bevel')
-    Number      strokeLineWidth
-    Number      strokeShadowBlur
-    Color       strokeShadowColor
-    Boolean     strokeShadowEnabled
-    Number      strokeShadowOffsetX
-    Number      strokeShadowOffsetY
-    String      strokeType ('solid', 'dotted', 'dashed', 'none')
-    String      title
+Point       center
+String      class
+Number      fillAngle (0..360)
+Color       fillColor
+Gradient    fillGradient
+Number      fillShadowBlur
+Color       fillShadowColor
+Boolean     fillShadowEnabled
+Number      fillShadowOffsetX
+Number      fillShadowOffsetY
+String      fillType ('solid', 'linear', 'radial', 'none')
+Rectangle   frame
+String      id
+Number      opacity (0..1)
+Path        path
+Number      rotationAngle (0..360)
+Boolean     scaleImage
+Color       strokeColor
+String      strokeLineCap ('butt', 'round', 'square')
+LineDash    strokeLineDash
+String      strokeLineJoin ('miter', 'round', 'bevel')
+Number      strokeLineWidth
+Number      strokeShadowBlur
+Color       strokeShadowColor
+Boolean     strokeShadowEnabled
+Number      strokeShadowOffsetX
+Number      strokeShadowOffsetY
+String      strokeType ('solid', 'dotted', 'dashed', 'none')
+String      title
 ```
  
 ####Color
 
-    Number      red
-    Number      green
-    Number      blue
-    Number      alpha
-    Number      red255
-    Number      green255
-    Number      blue255
-    String      hexString
-    String      hexaString
+```java
+Number      red
+Number      green
+Number      blue
+Number      alpha
+Number      red255
+Number      green255
+Number      blue255
+String      hexString
+String      hexaString
+```
  
 ####Point
 
-    Number      x
-    Number      y
+```java
+Number      x
+Number      y
+```
  
 ####Size
 
-    Number      width
-    Number      height
+```java
+Number      width
+Number      height
+```
  
 ####Rectangle
 
-    Point      origin
-    Size       size
+```java
+Point      origin
+Size       size
+```
  
 ####Gradient
 
-    [GradientElement]     elements
-    Number                elementCount
+```java
+[GradientElement]     elements
+Number                elementCount
+```
  
 ####GradientElement
 
-    Number     location (0..1)
-    Color      color
+```java
+Number     location (0..1)
+Color      color
+```
  
 ####Path
 
-    [PathSegment]     segments
-    Number            segmentCount
+```java
+[PathSegment]     segments
+Number            segmentCount
+```
  
 ####PathSegment
 
-    String     type ('lineTo', 'moveTo', 'curveTo', 'close')
-    Point      point
-    Point      cp1
-    Point      cp2
+```java
+String     type ('lineTo', 'moveTo', 'curveTo', 'close')
+Point      point
+Point      cp1
+Point      cp2
+```
  
 ##Template Tags
 
