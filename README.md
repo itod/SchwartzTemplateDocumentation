@@ -6,7 +6,7 @@ TDTemplateEngine template syntax is very similar to MGTemplateEngine and Django.
 
 **Print Tags** print the value an expression to the text output:
 
-     My name is <%=name%>.
+     My name is <%= name %>.
 
 Builtin **Filters** are available:
 
