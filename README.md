@@ -1,4 +1,20 @@
-[Page Object Model](#page-object-model)
+* [Page Object Model](#page-object-model)
+* [Template Tags](#template-tags)
+    * [Print Tag](#print-tag)
+    * [If Tag](#if-tag)
+    * [For Tag](#for-tag)
+    * [Skip Tag](#skip-tag)
+    * [Trim & Indent Tags](#trim-and-indent-tags)
+* [Template Expression Language](#template-expression-language)
+    * [Logical Expressions](#logical-expressions)
+    * [Equality Expressions](#equality-expressions)
+    * [Comparison Expressions](#comparison-expressions)
+    * [Arithmetic Expressions](#arithmetic-expressions)
+    * [Path Expressions](#path-expressions)
+    * [Sub Expressions](#sub-expressions)
+    * [Boolean Literals](#boolean-expressions)
+    * [Number Literals](#number-expressions)
+    * [String Literals](#string-expressions)
 
 ##Page Object Model
 
@@ -174,10 +190,6 @@ Produces a single line indented by 4 spaces:
 
         Make it so.
 
-###Tag Extensibility
-
-You can implement your own custom Tags by subclassing `TDTag` and overriding `-[TDTag doTagInContext:]`.
-
 ##Template Expression Language
 
 As you have seen in the examples above, many tags may contain simple expressions which should be familiar to anyone with experience using JavaScript.
@@ -272,6 +284,16 @@ Properties of objects may be reached using a chain of property references called
 person.address.zipCode
 ```
 
+###Sub Expressions
+
+Any expression may be wrapped in parentheses for clarity or to alter the order of operations.
+
+```jsp
+(a + b) / c
+
+((a or b) and (c or d))
+```
+
 ###Boolean Literals
 
 Boolean literals are available matching the JavaScript and Objective-C languages:
@@ -306,15 +328,5 @@ String literals may be wrapped in either single or double quotes:
 "I'm surrounded by assholes."
 
 'Evil will always triumph, because Good is dumb.'
-```
-
-###Sub Expressions
-
-Any expression may be wrapped in parentheses for clarity or to alter the order of operations.
-
-```jsp
-(a + b) / c
-
-((a or b) and (c or d))
 ```
 
