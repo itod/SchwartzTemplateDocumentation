@@ -48,13 +48,15 @@ Mah kitteh sez "<%= lolSpeak|trim|uppercase %>".
 
 **If Tags** offer conditional rendering based on input variables at render time:
 
-    <% if testVal <= expectedMax || force %>
-        Text 1.
-    <% elif shortCircuit or ('foo' == bar and 'baz' != bat) %>
-        Text 2.
-    <% else %>
-        Default Text.
-    <% /if %>
+```jsp
+<% if testVal <= expectedMax || force %>
+    Text 1.
+<% elif shortCircuit or ('foo' == bar and 'baz' != bat) %>
+    Text 2.
+<% else %>
+    Default Text.
+<% /if %>
+```
 
 *(Note the boolean test expressions in this example are nonsense, and just intended to demonstrate some of the expression language features.)*
 
@@ -62,18 +64,22 @@ Mah kitteh sez "<%= lolSpeak|trim|uppercase %>".
 
 **For Tags** can loop thru arbitrary numerical ranges, and may nest:
 
-    <% for i in 0 to 10 %>
-        <% for j in 0 to 2 %>
-            <%=i%>:<%=j%>
-        <% /for %>
+```jsp
+<% for i in 0 to 10 %>
+    <% for j in 0 to 2 %>
+        <%=i%>:<%=j%>
     <% /for %>
+<% /for %>
+```
 
 Numerical ranges may iterate in reverse order, and also offer a "step" option specified after the `by` keyword
 
-    <% for i in 70 to 60 by 2 %>
-        <%=i%><% if not currentLoop.isLast %>,<% /if %>
-    <% /for %>
-    
+```jsp
+<% for i in 70 to 60 by 2 %>
+    <%=i%><% if not currentLoop.isLast %>,<% /if %>
+<% /for %>
+```
+
 Prints:
 
     70,68,66,64,62,60
@@ -82,15 +88,19 @@ Note that each For Tag offers access to a `currentLoop` variable which provides 
 
 For Tags can also loop thru variables representing Cocoa collection objects like `NSArray`, or `NSSet`:
 
-    <% for obj in vec %>
-        <%=obj%>
-    <% /for %>
+```jsp
+<% for obj in vec %>
+    <%=obj%>
+<% /for %>
+```
 
 and `NSDictionary` (note the convenient unpacking of *both key and value*):
 
-    <% for key, val in dict %>
-        <%=key%>:<%=val%>
-    <% /for %>
+```jsp
+<% for key, val in dict %>
+    <%=key%>:<%=val%>
+<% /for %>
+```
 
 ###Skip Tag
 
@@ -102,17 +112,21 @@ Skip Tags may contain an optional boolean expression. If the expression evaluate
 
 The expression within the Skip Tag is essentially a syntactical shortcut. The two following forms are semantically equivalent, but the second is more convenient:
 
-    {% for i in 1 to 3 %}
-        {% if i == 2 %}
-            {% skip %}
-        {% /if %}
-        {{i}}
+```jsp
+{% for i in 1 to 3 %}
+    {% if i == 2 %}
+        {% skip %}
     {% /if %}
+    {{i}}
+{% /if %}
+```
 
-    {% for i in 1 to 3 %}
-        {% skip i == 2 %}
-        {{i}}
-    {% /if %}
+```jsp
+{% for i in 1 to 3 %}
+    {% skip i == 2 %}
+    {{i}}
+{% /if %}
+```
 
 Both examples produce the following output:
 
@@ -130,11 +144,13 @@ Also, any lines inside the Trim Tag bodies containg only other Tags are removed 
 
 So the following:
 
-    <% trim %>
-        <% if true %>
-                                Make it so.
-        <% /if %>
-    <% /trim %>
+```jsp
+<% trim %>
+    <% if true %>
+                            Make it so.
+    <% /if %>
+<% /trim %>
+```
 
 Produces a single line with all leading and trailing whitespace trimed:
 
@@ -142,13 +158,15 @@ Produces a single line with all leading and trailing whitespace trimed:
 
 Indentation withing Trim Tags may be controlled with nested **Indent Tags**. The following:
 
-    <% trim %>
-        <% if true %>
-            <% indent %>
-                Make it so.
-            <% /indent %>
-        <% /if %>
-    <% /trim %>
+```jsp
+<% trim %>
+    <% if true %>
+        <% indent %>
+            Make it so.
+        <% /indent %>
+    <% /if %>
+<% /trim %>
+```
 
 Produces a single line indented by 4 spaces:
 
@@ -166,29 +184,33 @@ As you have seen in the examples above, many tags may contain simple expressions
 
 Logical **And** **Or** and **Not** may be expressed using either the familiar JavaScript operators (`&&`, `||`, `!`), or their english equivalents:
 
-    a && b 
+```jsp
+a && b 
 
-    a and b
+a and b
 
-    a || b
+a || b
 
-    a or b
+a or b
 
-    !a
+!a
 
-    not a
+not a
+```
 
 ###Equality Expressions
 
 Variable equality and inequality may be tested using either the familiar JavaScript operators (`==`, `!=`), or their equivalents (`eq`, `ne`):
 
-    a == b 
+```jsp
+a == b 
 
-    a eq b
+a eq b
 
-    a != b
+a != b
 
-    a ne b
+a ne b
+```
 
 Note that `a = b` is a syntax error, as assignments are not allowed in the expression language, and the correct equality operator is `==`, not `=`.
 
@@ -196,83 +218,101 @@ Note that `a = b` is a syntax error, as assignments are not allowed in the expre
 
 Variables may be compared using either the familiar JavaScript operators (`<`, `<=`, `>`, `>=`), or their equivalents (`lt`, `le`, `gt`, `ge`):
 
-    a < b 
+```jsp
+a < b 
 
-    a lt b
+a lt b
 
-    a <= b 
+a <= b 
 
-    a le b
+a le b
 
-    a > b
+a > b
 
-    a gt b
+a gt b
 
-    a >= b
+a >= b
 
-    a ge b
+a ge b
+```
 
 ###Arithmetic Expressions
 
 Arithmetic may be performed using either the familiar JavaScript operators:
 
-    a + b
+```jsp
+a + b
 
-    a - b
+a - b
 
-    a * b
+a * b
 
-    a / b
+a / b
+```
 
 The modulo operator for finding the remainder after division of one number by another is supported:
 
-    a % b
+```jsp
+a % b
+```
 
 And explicity negative numbers are supported:
 
-    -a
+```jsp
+-a
+```
 
 ###Path Expressions
 
 Properties of objects may be reached using a chain of property references called a Path Expression:
 
-    person.address.zipCode
+```jsp
+person.address.zipCode
+```
 
 ###Boolean Literals
 
 Boolean literals are available matching the JavaScript and Objective-C languages:
 
-    true
+```jsp
+true
 
-    false
+false
 
-    YES
+YES
 
-    NO
+NO
+```
 
 ###Number Literals
 
 Number literals may appear either as integers or as floating point numbers with an optional exponent:
 
-    42
+```jsp
+42
 
-    3.14
+3.14
 
-    16.162e10−36
+16.162e10−36
+```
 
 ###String Literals
 
 String literals may be wrapped in either single or double quotes:
 
-    "I'm surrounded by assholes."
+```jsp
+"I'm surrounded by assholes."
 
-    'Evil will always triumph, because Good is dumb.'
+'Evil will always triumph, because Good is dumb.'
+```
 
 ###Sub Expressions
 
 Any expression may be wrapped in parentheses for clarity or to alter the order of operations.
 
-    (a + b) / c
+```jsp
+(a + b) / c
 
-    ((a or b) and (c or d))
+((a or b) and (c or d))
+```
 
