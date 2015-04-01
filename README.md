@@ -73,15 +73,15 @@ String      title
 ####Color
 
 ```java
-Number      red
-Number      green
-Number      blue
-Number      alpha
-Number      red255
-Number      green255
-Number      blue255
-String      hexString
-String      hexaString
+Number      red (0..1)
+Number      green (0..1)
+Number      blue (0..1)
+Number      alpha (0..1)
+Number      red255 (0..255)
+Number      green255 (0..255)
+Number      blue255 (0..255)
+String      hexString (6 hex chars excluding alpha)
+String      hexaString (8 hex chars including alpha)
 ```
  
 ####Point
@@ -108,7 +108,7 @@ Size       size
 ####Gradient
 
 ```java
-[GradientElement]     elements
+GradientElement[]     elements
 Number                elementCount
 ```
  
@@ -122,7 +122,7 @@ Color      color
 ####Path
 
 ```java
-[PathSegment]     segments
+PathSegment[]     segments
 Number            segmentCount
 ```
  
@@ -133,6 +133,14 @@ String     type ('lineTo', 'moveTo', 'curveTo', 'close')
 Point      point
 Point      cp1
 Point      cp2
+```
+ 
+####LineDash
+
+```java
+Number     count
+Number     phase
+Number[]   lengths
 ```
  
 ##Template Tags
