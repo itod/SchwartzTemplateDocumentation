@@ -14,17 +14,17 @@ Builtin **Filters** are available:
 
      My name is <%=firstName|capitalize%> <%=lastName|capitalize%>, and I'm a <%=profession|lowercase%>.
 
-     Mah kitteh sez "<%=lolSpeak|trim|uppercase%>".
+     Mah kitteh sez "<%= lolSpeak|trim|uppercase %>".
 
      <%='Hello World!'|replace:'hello', 'Goodbye Cruel', 'i'%>"
 
-     <%=degrees|round%>
+     <%= degrees|round %>
 
      <%=degrees|fmt:'%0.1f'%>
 
      <%=degrees|ceil|fmt:'%0.1f'%>
 
-     <%='now'|fmtDate:'EEE, MMM d, yy'%>
+     <%= 'now'|fmtDate:'EEE, MMM d, yy' %>
 
 ####Filter Extensibility
 
