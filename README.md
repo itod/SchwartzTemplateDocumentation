@@ -8,6 +8,8 @@ TDTemplateEngine template syntax is very similar to MGTemplateEngine and Django.
 
      My name is <%= name %>.
 
+Whitespace around the tag delimiters is optional.
+
 Builtin **Filters** are available:
 
      My name is <%=firstName|capitalize%> <%=lastName|capitalize%>, and I'm a <%=profession|lowercase%>.
