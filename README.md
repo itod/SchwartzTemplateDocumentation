@@ -1,3 +1,5 @@
+[Page Object Model](#page-object-model)
+
 ##Page Object Model
 
 Each Page of a Schwartz Document has an Object Model, similar to the Document Object Model (DOM) familiar to web developers. This Object Model is a heirarchical tree structure of objects representing the graphical objects displayed on the Schwartz Canvas.
