@@ -14,7 +14,7 @@ Templates are managed in the Template Window (Accessible via the Main Menu > Win
 
 The Schwartz Template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-template basis in the Templates Window (⌃⎇⌘T).
 
-The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `{%` `%}` and `{{` `}}`, you can use those on your user-defined templates by specifying the tag delimiters in the Templates Window UI.
+The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `<%` `%>` and `<%=` `%>`, you can use those on your user-defined templates by specifying the tag delimiters in the Templates Window UI.
 
 ###Print Tag
 
@@ -113,19 +113,19 @@ Skip Tags may contain an optional boolean expression. If the expression evaluate
 The expression within the Skip Tag is essentially a syntactical shortcut. The two following forms are semantically equivalent, but the second is more convenient:
 
 ```jsp
-{% for i in 1 to 3 %}
-    {% if i == 2 %}
-        {% skip %}
-    {% /if %}
-    {{i}}
-{% /if %}
+<% for i in 1 to 3 %>
+    <% if i == 2 %>
+        <% skip %>
+    <% /if %>
+    <%=i%>
+<% /if %>
 ```
 
 ```jsp
-{% for i in 1 to 3 %}
-    {% skip i == 2 %}
-    {{i}}
-{% /if %}
+<% for i in 1 to 3 %>
+    <% skip i == 2 %>
+    <%=i%>
+<% /if %>
 ```
 
 Both examples produce the following output:
