@@ -19,6 +19,7 @@ Learn more about Schwartz at [http://celestialteapot.com/schwartz/](http://celes
     * [For Tag](#for-tag)
     * [Skip Tag](#skip-tag)
     * [Trim & Indent Tags](#trim-and-indent-tags)
+    * [Comment Tags](#comment-tags)
 * [Template Expression Language](#template-expression-language)
     * [Logical Expressions](#logical-expressions)
     * [Equality Expressions](#equality-expressions)
@@ -315,7 +316,7 @@ Produces a single line indented by 4 spaces:
 
         Make it so.
 
-###Comment Tag
+###Comment Tags
 
 The body of Comment Tags is ignored, and not included in the output text.
 
