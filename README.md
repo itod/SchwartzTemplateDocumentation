@@ -200,7 +200,7 @@ As you have seen in the examples above, many tags may contain simple expressions
 
 Logical **And** **Or** and **Not** may be expressed using either the familiar JavaScript operators (`&&`, `||`, `!`), or their english equivalents:
 
-```jsp
+```ruby
 a && b 
 
 a and b
@@ -218,8 +218,8 @@ not a
 
 Variable equality and inequality may be tested using either the familiar JavaScript operators (`==`, `!=`), or their equivalents (`eq`, `ne`):
 
-```jsp
-a == b 
+```ruby
+a == b
 
 a eq b
 
@@ -234,7 +234,7 @@ Note that `a = b` is a syntax error, as assignments are not allowed in the expre
 
 Variables may be compared using either the familiar JavaScript operators (`<`, `<=`, `>`, `>=`), or their equivalents (`lt`, `le`, `gt`, `ge`):
 
-```jsp
+```ruby
 a < b 
 
 a lt b
@@ -256,7 +256,7 @@ a ge b
 
 Arithmetic may be performed using either the familiar JavaScript operators:
 
-```jsp
+```ruby
 a + b
 
 a - b
@@ -268,13 +268,13 @@ a / b
 
 The modulo operator for finding the remainder after division of one number by another is supported:
 
-```jsp
+```ruby
 a % b
 ```
 
 And explicity negative numbers are supported:
 
-```jsp
+```ruby
 -a
 ```
 
@@ -282,7 +282,7 @@ And explicity negative numbers are supported:
 
 Properties of objects may be reached using a chain of property references called a Path Expression:
 
-```jsp
+```ruby
 person.address.zipCode
 ```
 
@@ -290,7 +290,7 @@ person.address.zipCode
 
 Any expression may be wrapped in parentheses for clarity or to alter the order of operations.
 
-```jsp
+```ruby
 (a + b) / c
 
 ((a or b) and (c or d))
@@ -300,7 +300,7 @@ Any expression may be wrapped in parentheses for clarity or to alter the order o
 
 Boolean literals are available matching the JavaScript and Objective-C languages:
 
-```jsp
+```ruby
 true
 
 false
@@ -314,7 +314,7 @@ NO
 
 Number literals may appear either as integers or as floating point numbers with an optional exponent:
 
-```jsp
+```ruby
 42
 
 3.14
@@ -326,7 +326,7 @@ Number literals may appear either as integers or as floating point numbers with 
 
 String literals may be wrapped in either single or double quotes:
 
-```jsp
+```ruby
 "I'm surrounded by assholes."
 
 'Evil will always triumph, because Good is dumb.'
