@@ -3,6 +3,16 @@ Learn more about Schwartz at [http://celestialteapot.com/schwartz/](http://celes
 #Schwartz Template Language Documentation
 
 * [Page Object Model](#page-object-model)
+    * [Object](#object)
+    * [Color](#color)
+    * [Point](#point)
+    * [Size](#size)
+    * [Rectangle](#rectangle)
+    * [Gradient](#gradient)
+    * [GradientElement](#gradientelement)
+    * [Path](#path)
+    * [PathSegment](#pathsegment)
+    * [LineDash](#linedash)
 * [Template Tags](#template-tags)
     * [Print Tag](#print-tag)
     * [If Tag](#if-tag)
