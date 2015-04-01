@@ -1,14 +1,28 @@
-###Template Syntax
+##Page Object Model
 
-The Schwartz template language syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-template basis in the Templates Window (⌃⎇⌘T).
+Each Page of a Schwartz Document has an Object Model, similar to the Document Object Model (DOM) familiar to web developers. This Object Model is a heirarchical tree structure of objects representing the graphical objects displayed on the Schwartz Canvas.
+
+When you click the **Generate** button, Schwartz produces the source code representation of the currently selected Page. To do this, Schwartz traverses the current Page Object Model using the currently selected Template.
+
+So Templates are used to specify the source code generated from each Page of a Schwartz Document. This Template-based source code generation is what makes Schwartz unique. 
+
+Schwartz has several built-in Templates for popular programming languages like Objective-C, JavaScript, Swift, and SVG. The built-in Templates are not editable, but users can create their own Templates from scratch, or by starting from an existing built-in Template.
+
+Templates are managed in the Template Window (Accessible via the Main Menu > Window > Templates Window or `⌃⎇⌘T`). There you can explore the built-in Templates of creat your own.
+
+##Template Tags
+
+The Schwartz Template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-template basis in the Templates Window (⌃⎇⌘T).
 
 The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `{%` `%}` and `{{` `}}`, you can use those on your user-defined templates by specifying the tag delimiters in the Templates Window UI.
 
-####Print Tag
+###Print Tag
 
 **Print Tags** print the value an expression to the text output:
 
+```ASP
      My name is <%= name %>.
+```
 
 Whitespace around the tag delimiters is optional.
 
@@ -28,11 +42,11 @@ Builtin **Filters** are available:
 
      <%= 'now'|fmtDate:'EEE, MMM d, yy' %>
 
-####Filter Extensibility
+###Filter Extensibility
 
 You can define your own Filters in ObjC by subclassing `TDFilter` and overriding `-[TDFilter doFilter:withArguments:]`.
 
-####If Tag
+###If Tag
 
 **If Tags** offer conditional rendering based on input variables at render time:
 
@@ -46,7 +60,7 @@ You can define your own Filters in ObjC by subclassing `TDFilter` and overriding
 
 *(Note the boolean test expressions in this example are nonsense, and just intended to demonstrate some of the expression language features.)*
 
-####For Tag
+###For Tag
 
 **For Tags** can loop thru arbitrary numerical ranges, and may nest:
 
@@ -80,7 +94,7 @@ and `NSDictionary` (note the convenient unpacking of *both key and value*):
         <%=key%>:<%=val%>
     <% /for %>
 
-####Skip Tag
+###Skip Tag
 
 **Skip Tags** can be used to skip the remainder of the current iteration of a For Tag loop. 
 
@@ -108,7 +122,7 @@ Both examples produce the following output:
 
 If no expression is present in the Skip Tag, it is always respected, and the current iteration of the enclosing For Tag is always skipped.
 
-####Trim and Indent Tags
+###Trim and Indent Tags
 
 As with any templating mechanism, whitespace handling is often a significant concern. Schwartz includes two optional tags that can be used to simplify whitespace handling.
 
@@ -142,15 +156,15 @@ Produces a single line indented by 4 spaces:
 
         Make it so.
 
-####Tag Extensibility
+###Tag Extensibility
 
 You can implement your own custom Tags by subclassing `TDTag` and overriding `-[TDTag doTagInContext:]`.
 
-###Template Expression Language
+##Template Expression Language
 
 As you have seen in the examples above, many tags may contain simple expressions which should be familiar to anyone with experience using JavaScript.
 
-####Logical Expressions
+###Logical Expressions
 
 Logical **And** **Or** and **Not** may be expressed using either the familiar JavaScript operators (`&&`, `||`, `!`), or their english equivalents:
 
@@ -166,7 +180,7 @@ Logical **And** **Or** and **Not** may be expressed using either the familiar Ja
 
     not a
 
-####Equality Expressions
+###Equality Expressions
 
 Variable equality and inequality may be tested using either the familiar JavaScript operators (`==`, `!=`), or their equivalents (`eq`, `ne`):
 
@@ -180,7 +194,7 @@ Variable equality and inequality may be tested using either the familiar JavaScr
 
 Note that `a = b` is a syntax error, as assignments are not allowed in the expression language, and the correct equality operator is `==`, not `=`.
 
-####Comparison Expressions
+###Comparison Expressions
 
 Variables may be compared using either the familiar JavaScript operators (`<`, `<=`, `>`, `>=`), or their equivalents (`lt`, `le`, `gt`, `ge`):
 
@@ -200,7 +214,7 @@ Variables may be compared using either the familiar JavaScript operators (`<`, `
 
     a ge b
 
-####Arithmetic Expressions
+###Arithmetic Expressions
 
 Arithmetic may be performed using either the familiar JavaScript operators:
 
@@ -220,13 +234,13 @@ And explicity negative numbers are supported:
 
     -a
 
-####Path Expressions
+###Path Expressions
 
 Properties of objects may be reached using a chain of property references called a Path Expression:
 
     person.address.zipCode
 
-####Boolean Literals
+###Boolean Literals
 
 Boolean literals are available matching the JavaScript and Objective-C languages:
 
@@ -238,7 +252,7 @@ Boolean literals are available matching the JavaScript and Objective-C languages
 
     NO
 
-####Number Literals
+###Number Literals
 
 Number literals may appear either as integers or as floating point numbers with an optional exponent:
 
@@ -248,7 +262,7 @@ Number literals may appear either as integers or as floating point numbers with 
 
     16.162e10−36
 
-####String Literals
+###String Literals
 
 String literals may be wrapped in either single or double quotes:
 
@@ -256,7 +270,7 @@ String literals may be wrapped in either single or double quotes:
 
     'Evil will always triumph, because Good is dumb.'
 
-####Sub Expressions
+###Sub Expressions
 
 Any expression may be wrapped in parentheses for clarity or to alter the order of operations.
 
