@@ -17,6 +17,16 @@
     * [Boolean Literals](#boolean-expressions)
     * [Number Literals](#number-expressions)
     * [String Literals](#string-expressions)
+    
+Learn more about Schwartz at [http://celestialteapot.com/schwartz/](http://celestialteapot.com/schwartz/).
+
+Any expression may be wrapped in parentheses for clarity or to alter the order of operations.
+
+```jsp
+(a + b) / c
+
+((a or b) and (c or d))
+```)
 
 ##Page Object Model
 
