@@ -229,7 +229,7 @@ Prints:
 
 Note that each For Tag offers access to a `currentLoop` variable which provides information like `currentIndex`, `isFirst`, `isLast`, and `parentLoop`.
 
-For Tags can also loop thru variables representing Cocoa collection objects like `NSArray`, or `NSSet`:
+For Tags can also loop thru variables representing Arrays:
 
 ```jsp
 <% for obj in vec %>
@@ -237,11 +237,11 @@ For Tags can also loop thru variables representing Cocoa collection objects like
 <% /for %>
 ```
 
-and `NSDictionary` (note the convenient unpacking of *both key and value*):
+and properties of Objects (note the convenient unpacking of *both key and value*):
 
 ```jsp
-<% for key, val in dict %>
-    <%=key%>:<%=val%>
+<% for prop, val in dict %>
+    <%=prop%>:<%=val%>
 <% /for %>
 ```
 
