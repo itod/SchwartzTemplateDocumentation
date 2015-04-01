@@ -16,9 +16,9 @@ Learn more about Schwartz at [http://celestialteapot.com/schwartz/](http://celes
     * [Arithmetic Expressions](#arithmetic-expressions)
     * [Path Expressions](#path-expressions)
     * [Sub Expressions](#sub-expressions)
-    * [Boolean Literals](#boolean-expressions)
-    * [Number Literals](#number-expressions)
-    * [String Literals](#string-expressions)
+    * [Boolean Literals](#boolean-literals)
+    * [Number Literals](#number-literals)
+    * [String Literals](#string-literals)
 
 ##Page Object Model
 
