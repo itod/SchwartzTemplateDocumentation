@@ -44,10 +44,6 @@ Mah kitteh sez "<%= lolSpeak|trim|uppercase %>".
 <%= 'now'|fmtDate:'EEE, MMM d, yy' %>
 ```
 
-###Filter Extensibility
-
-You can define your own Filters in ObjC by subclassing `TDFilter` and overriding `-[TDFilter doFilter:withArguments:]`.
-
 ###If Tag
 
 **If Tags** offer conditional rendering based on input variables at render time:
