@@ -291,14 +291,14 @@ So the following:
 ```jsp
 <% trim %>
     <% if true %>
-                            Make it so.
+                            I hate yogurt!
     <% /if %>
 <% /trim %>
 ```
 
 Produces a single line with all leading and trailing whitespace trimed:
 
-    Make it so.
+    I hate yogurt!
 
 Indentation withing Trim Tags may be controlled with nested **Indent Tags**. The following:
 
@@ -306,7 +306,7 @@ Indentation withing Trim Tags may be controlled with nested **Indent Tags**. The
 <% trim %>
     <% if true %>
         <% indent %>
-            I hate yogurt! Even with strawberries.
+            Even with strawberries.
         <% /indent %>
     <% /if %>
 <% /trim %>
@@ -314,7 +314,7 @@ Indentation withing Trim Tags may be controlled with nested **Indent Tags**. The
 
 Produces a single line indented by 4 spaces:
 
-        I hate yogurt! Even with strawberries.
+        Even with strawberries.
 
 ###Comment Tags
 
