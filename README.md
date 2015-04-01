@@ -32,6 +32,93 @@ Schwartz has several built-in Templates for popular programming languages like O
 
 Templates are managed in the Template Window (Accessible via the Main Menu > Window > Templates Window or `⌃⎇⌘T`). There you can explore the built-in Templates or create your own.
 
+###Classes
+
+Each Template has access to a global Array of Objects called `objects`. Each object in this collection represents a graphic object in the page and is of type Object. The properties of the Object type are listed below.
+
+####Object
+
+```java
+    Point       center
+    String      class
+    Number      fillAngle (0..360)
+    Color       fillColor
+    Gradient    fillGradient
+    Number      fillShadowBlur
+    Color       fillShadowColor
+    Boolean     fillShadowEnabled
+    Number      fillShadowOffsetX
+    Number      fillShadowOffsetY
+    String      fillType ('solid', 'linear', 'radial', 'none')
+    Rectangle   frame
+    String      id
+    Number      opacity (0..1)
+    Path        path
+    Number      rotationAngle (0..360)
+    Boolean     scaleImage
+    Color       strokeColor
+    String      strokeLineCap ('butt', 'round', 'square')
+    LineDash    strokeLineDash
+    String      strokeLineJoin ('miter', 'round', 'bevel')
+    Number      strokeLineWidth
+    Number      strokeShadowBlur
+    Color       strokeShadowColor
+    Boolean     strokeShadowEnabled
+    Number      strokeShadowOffsetX
+    Number      strokeShadowOffsetY
+    String      strokeType ('solid', 'dotted', 'dashed', 'none')
+    String      title
+```
+ 
+####Color
+
+    Number      red
+    Number      green
+    Number      blue
+    Number      alpha
+    Number      red255
+    Number      green255
+    Number      blue255
+    String      hexString
+    String      hexaString
+ 
+####Point
+
+    Number      x
+    Number      y
+ 
+####Size
+
+    Number      width
+    Number      height
+ 
+####Rectangle
+
+    Point      origin
+    Size       size
+ 
+####Gradient
+
+    [GradientElement]     elements
+    Number                elementCount
+ 
+####GradientElement
+
+    Number     location (0..1)
+    Color      color
+ 
+####Path
+
+    [PathSegment]     segments
+    Number            segmentCount
+ 
+####PathSegment
+
+    String     type ('lineTo', 'moveTo', 'curveTo', 'close')
+    Point      point
+    Point      cp1
+    Point      cp2
+ 
 ##Template Tags
 
 The Schwartz Template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-Template basis in the Templates Window (⌃⎇⌘T).
