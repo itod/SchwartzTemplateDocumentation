@@ -20,7 +20,7 @@ The default tag delimiters were chosen as they mix well with C-inspired language
 
 **Print Tags** print the value an expression to the text output:
 
-```ASP
+```jsp
      My name is <%= name %>.
 ```
 
