@@ -1,3 +1,5 @@
+#Schwartz Template Language Documentation
+
 * [Page Object Model](#page-object-model)
 * [Template Tags](#template-tags)
     * [Print Tag](#print-tag)
