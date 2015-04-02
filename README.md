@@ -432,16 +432,12 @@ Any expression may be wrapped in parentheses for clarity or to alter the order o
 
 ###Boolean Literals
 
-Boolean literals are available matching the JavaScript and Objective-C languages:
+Boolean literals are available matching the JavaScript language:
 
 ```ruby
 true
 
 false
-
-YES
-
-NO
 ```
 
 ###Number Literals
