@@ -114,6 +114,12 @@ Number      height
 ```java
 Point      origin
 Size       size
+Number     minX
+Number     midX
+Number     maxX
+Number     minY
+Number     midY
+Number     maxY
 ```
  
 ####Gradient
