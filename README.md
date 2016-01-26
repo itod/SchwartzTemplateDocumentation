@@ -164,7 +164,7 @@ Number[]   lengths
 
 The Schwartz Template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-Template basis in the Templates Window (⌃⎇⌘T).
 
-The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `{%` `%}` and `{{` `}}`, you can use those on your user-defined Templates by double-clicking and editing the tag delimiters next to your user-definted Template in the Templates Window.
+The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `{%` `%}` and `{{` `}}`, you can use those on your user-defined Templates by double-clicking and editing the tag delimiters next to your user-defined Template in the Templates Window.
 
 ###Print Tag
 
@@ -183,7 +183,7 @@ My name is <%=firstName|capitalize%> <%=lastName|capitalize%>, and I'm a <%=prof
 
 Mah kitteh sez "<%= lolSpeak|trim|uppercase %>".
 
-<%='Hello World!'|replace:'hello', 'Goodbye Cruel', 'i'%>"
+<%='Hello World!'|replace:'hello', 'Goodbye Cruel', 'i'%>
 
 <%= degrees|round %>
 
@@ -302,11 +302,11 @@ So the following:
 <% /trim %>
 ```
 
-Produces a single line with all leading and trailing whitespace trimed:
+Produces a single line with all leading and trailing whitespace trimmed:
 
     I hate yogurt!
 
-Indentation withing Trim Tags may be controlled with nested **Indent Tags**. The following:
+Indentation within Trim Tags may be controlled with nested **Indent Tags**. The following:
 
 ```jsp
 <% trim %>
