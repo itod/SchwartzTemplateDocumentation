@@ -1,6 +1,6 @@
 Learn more about Schwartz at [http://celestialteapot.com/schwartz/](http://celestialteapot.com/schwartz/).
 
-#Schwartz Template Language Documentation
+# Schwartz Template Language Documentation
 
 * [Page Object Model](#page-object-model)
     * [Object](#object)
@@ -31,7 +31,7 @@ Learn more about Schwartz at [http://celestialteapot.com/schwartz/](http://celes
     * [Number Literals](#number-literals)
     * [String Literals](#string-literals)
 
-##Page Object Model
+## Page Object Model
 
 Each Page of a Schwartz Document has an Object Model, similar to the Document Object Model (DOM) familiar to web developers. This Object Model is a heirarchical tree structure of objects representing the graphical objects displayed on the Schwartz Canvas.
 
@@ -43,11 +43,11 @@ Schwartz has several built-in Templates for popular programming languages like O
 
 Templates are managed in the Template Window (Accessible via the Main Menu > Window > Templates Window or `⌃⎇⌘T`). There you can explore the built-in Templates or create your own.
 
-###Classes
+### Classes
 
 Each Template has access to a global Array of Objects called `objects`. Each object in this collection represents a graphic object in the page and is of type Object. The properties of the Object type are listed below.
 
-####Object
+#### Object
 
 ```java
 Point       center
@@ -81,7 +81,7 @@ String      strokeType ('solid', 'dotted', 'dashed', 'none')
 String      title
 ```
  
-####Color
+#### Color
 
 ```java
 Number      red (0..1)
@@ -95,21 +95,21 @@ String      hexString (6 hex chars excluding alpha)
 String      hexaString (8 hex chars including alpha)
 ```
  
-####Point
+#### Point
 
 ```java
 Number      x
 Number      y
 ```
  
-####Size
+#### Size
 
 ```java
 Number      width
 Number      height
 ```
  
-####Rectangle
+#### Rectangle
 
 ```java
 Point      origin
@@ -122,28 +122,28 @@ Number     midY
 Number     maxY
 ```
  
-####Gradient
+#### Gradient
 
 ```java
 GradientElement[]     elements
 Number                elementCount
 ```
  
-####GradientElement
+#### GradientElement
 
 ```java
 Number     location (0..1)
 Color      color
 ```
  
-####Path
+#### Path
 
 ```java
 PathSegment[]     segments
 Number            segmentCount
 ```
  
-####PathSegment
+#### PathSegment
 
 ```java
 String     type ('lineTo', 'moveTo', 'curveTo', 'close')
@@ -152,7 +152,7 @@ Point      cp1
 Point      cp2
 ```
  
-####LineDash
+#### LineDash
 
 ```java
 Number     count
@@ -160,13 +160,13 @@ Number     phase
 Number[]   lengths
 ```
  
-##Template Tags
+## Template Tags
 
 The Schwartz Template syntax is very similar to JSP, ASP, or Django. Default tag delimiters like `<%=` `%>` and `<%` `%>` are easily configurable on a per-Template basis in the Templates Window (⌃⎇⌘T).
 
 The default tag delimiters were chosen as they mix well with C-inspired languages like ObjC, C, and JavaScript in which curly braces are used often, but angle braces are not. If you prefer `{%` `%}` and `{{` `}}`, you can use those on your user-defined Templates by double-clicking and editing the tag delimiters next to your user-defined Template in the Templates Window.
 
-###Print Tag
+### Print Tag
 
 **Print Tags** print the value an expression to the text output:
 
@@ -194,7 +194,7 @@ Mah kitteh sez "<%= lolSpeak|trim|uppercase %>".
 <%= 'now'|fmtDate:'EEE, MMM d, yy' %>
 ```
 
-###If Tag
+### If Tag
 
 **If Tags** offer conditional rendering based on input variables at render time:
 
@@ -210,7 +210,7 @@ Mah kitteh sez "<%= lolSpeak|trim|uppercase %>".
 
 *(Note the boolean test expressions in this example are nonsense, and just intended to demonstrate some of the expression language features.)*
 
-###For Tag
+### For Tag
 
 **For Tags** can loop thru arbitrary numerical ranges, and may nest:
 
@@ -252,7 +252,7 @@ and properties of Objects (note the convenient unpacking of *both key and value*
 <% /for %>
 ```
 
-###Skip Tag
+### Skip Tag
 
 **Skip Tags** can be used to skip the remainder of the current iteration of a For Tag loop. 
 
@@ -284,7 +284,7 @@ Both examples produce the following output:
 
 If no expression is present in the Skip Tag, it is always respected, and the current iteration of the enclosing For Tag is always skipped.
 
-###Trim and Indent Tags
+### Trim and Indent Tags
 
 As with any templating mechanism, whitespace handling is often a significant concern. Schwartz includes two optional tags that can be used to simplify whitespace handling.
 
@@ -322,7 +322,7 @@ Produces a single line indented by 4 spaces:
 
         Even with strawberries.
 
-###Comment Tags
+### Comment Tags
 
 The body of **Comment Tags** is ignored, and not included in the output text.
 
@@ -332,11 +332,11 @@ The body of **Comment Tags** is ignored, and not included in the output text.
 <% /comment %>
 ```
 
-##Template Expression Language
+## Template Expression Language
 
 As you have seen in the examples above, many tags may contain simple expressions which should be familiar to anyone with experience using JavaScript.
 
-###Logical Expressions
+### Logical Expressions
 
 Logical **And** **Or** and **Not** may be expressed using either the familiar JavaScript operators (`&&`, `||`, `!`), or their english equivalents:
 
@@ -354,7 +354,7 @@ a or b
 not a
 ```
 
-###Equality Expressions
+### Equality Expressions
 
 Variable equality and inequality may be tested using either the familiar JavaScript operators (`==`, `!=`), or their equivalents (`eq`, `ne`):
 
@@ -370,7 +370,7 @@ a ne b
 
 Note that `a = b` is a syntax error, as assignments are not allowed in the expression language, and the correct equality operator is `==`, not `=`.
 
-###Comparison Expressions
+### Comparison Expressions
 
 Variables may be compared using either the familiar JavaScript operators (`<`, `<=`, `>`, `>=`), or their equivalents (`lt`, `le`, `gt`, `ge`):
 
@@ -392,7 +392,7 @@ a >= b
 a ge b
 ```
 
-###Arithmetic Expressions
+### Arithmetic Expressions
 
 Arithmetic may be performed using either the familiar JavaScript operators:
 
@@ -418,7 +418,7 @@ And explicity negative numbers are supported:
 -a
 ```
 
-###Path Expressions
+### Path Expressions
 
 Properties of objects may be reached using a chain of property references called a Path Expression:
 
@@ -426,7 +426,7 @@ Properties of objects may be reached using a chain of property references called
 person.address.zipCode
 ```
 
-###Sub Expressions
+### Sub Expressions
 
 Any expression may be wrapped in parentheses for clarity or to alter the order of operations.
 
@@ -436,7 +436,7 @@ Any expression may be wrapped in parentheses for clarity or to alter the order o
 ((a or b) and (c or d))
 ```
 
-###Boolean Literals
+### Boolean Literals
 
 Boolean literals are available matching the JavaScript language:
 
@@ -446,7 +446,7 @@ true
 false
 ```
 
-###Number Literals
+### Number Literals
 
 Number literals may appear either as integers or as floating point numbers with an optional exponent:
 
@@ -458,7 +458,7 @@ Number literals may appear either as integers or as floating point numbers with 
 16.162e10−36
 ```
 
-###String Literals
+### String Literals
 
 String literals may be wrapped in either single or double quotes:
 
@@ -467,4 +467,3 @@ String literals may be wrapped in either single or double quotes:
 
 'Evil will always triumph, because Good is dumb.'
 ```
-
